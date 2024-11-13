@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.navigation');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Willkommen auf meinem Blog</h1>
+        <p>Schön, dass du da bist! Hier findest du spannende Inhalte zu verschiedenen Themen!</p>
+        <nav>
+            <button class="burger-menu" onclick="toggleMenu()">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                <a href="blog.html">Blogartikel</a>
+                <ul class="submenu">
+                <li><a href="laos.html">Laos</a></li>
+                </ul>
+                </li>
+                <li><a href="ueber-mich.html">Über Mich</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="text-align: center;">Themenauswahl</h2>
+        <p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen.
+            Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen.
+            Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«.</p>
+
+        <section class="themen-grid">
+            <figure class="thema">
+                <a href="leipzig.html">
+                <img src="img/leipzig.jpg" alt="Leipzig">
+                <figcaption>
+                <h3>Leipzig</h3>
+                <p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie 
+                aussehen...</p>
+                </figcaption>
+                </a>
+            </figure>
+            <figure class="thema">
+                <a href="sylt.html">
+                <img src="img/sylt.jpg" alt="Sylt">
+                <figcaption>
+                <h3>Sylt</h3>
+                <p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie 
+                aussehen...</p>
+                </figcaption>
+                </a>
+            </figure>
+            <figure class="thema">
+                <a href="laos.html">
+                <img src="img/laos.jpg" alt="Laos">
+                <figcaption>
+                <h3>Laos</h3>
+                <p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen...</p>
+                </figcaption>
+                </a>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Anne Fritzenwanker 2024</p>
+        <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+    </footer>
+
+    <style>
+        .navigation {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navigation li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .burger-menu {
+            display: none;
+            font-size: 30px;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .navigation {
+                display: none;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navigation li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .burger-menu {
+                display: inline-block;
+            }
+
+            .navigation.active {
+                display: block;
+            }
+        }
+
+        .themen-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .thema {
+            flex: 1 1 30%;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .thema:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .thema {
+                flex: 1 1 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thema {
+                flex: 1 1 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: black;
+        }
+    </style>
+</body>
+
+</html>
